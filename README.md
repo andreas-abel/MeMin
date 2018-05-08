@@ -15,9 +15,10 @@ Simply run ./MeMin [Options] <input.kiss>. The output is written to a file named
 
 The following options can be specified:
 
-    -r: if no reset state is specified, any state might be a reset state (otherwise, the first state is assumed to be the reset state)
-    -np: do not include the 'partial solution' in the SAT problem
-    -nl: like -np, but does also not use the size of the 'partial solution' as a lower bound (i.e., does not need the partial solution at all)
+    -r:         if no reset state is specified, any state might be a reset state (otherwise, the first state is assumed to be the reset state)
+    -np:        do not include the 'partial solution' in the SAT problem
+    -nl:        like -np, but does also not use the size of the 'partial solution' as a lower bound (i.e., does not need the partial solution at all)
+    -v {0,1}:   verbosity level
 
 ## Evaluation Results
 
@@ -30,6 +31,6 @@ A table with all benchmark results can be found [here](http://embedded.cs.uni-sa
 ## References
 Please see the following paper if you are interested in how MeMin works:
 
-    MeMin: SAT-based Exact Minimization of Incompletely Specified Mealy Machines
-    A. Abel and J. Reineke
-    ICCAD, 2015. [doi](http://dx.doi.org/10.1109/ICCAD.2015.7372555)  [pdf](http://embedded.cs.uni-saarland.de/publications/iccad15.pdf)
+>  MeMin: SAT-based Exact Minimization of Incompletely Specified Mealy Machines  
+>  A. Abel and J. Reineke  
+>  ICCAD, 2015. [doi](http://dx.doi.org/10.1109/ICCAD.2015.7372555)  [pdf](http://embedded.cs.uni-saarland.de/publications/iccad15.pdf)
