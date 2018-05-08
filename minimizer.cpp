@@ -9,7 +9,7 @@
 #include <unordered_set>
 
 #include "minisat/core/Solver.h"
-#include "utils/System.h"
+#include "minisat/utils/System.h"
 
 #include "global.h"
 #include "KISSParser.h"
@@ -49,8 +49,6 @@ void splitTransitions(vector<vector<pair<IncSpecSeq*, pair<int, IncSpecSeq*> > >
 unordered_set<IncSpecSeq> getDisjointInputSet(vector<vector<pair<IncSpecSeq*, pair<int, IncSpecSeq*> > > >& states, vector<bool>& eqClass);
 void findPairwiseIncStates(vector<int>& pairwiseIncStates, vector<bool>& incompMatrix, int nStates);
 
-
-
 int verbosity = 0;
 bool firstStateReset = true;
 bool noPartialSolutionInSat = false;
@@ -67,7 +65,6 @@ void usage() {
 	cout << "            as a lower bound (i.e., does not need the partial solution at all)" << endl;
 	cout << "  -v {0,1}  verbosity level" << endl;
 }
-
 
 int main(int argc, char* argv[]) {
 	timeval start, end;
@@ -226,8 +223,6 @@ void removeUnreachableStates(vector<vector<pair<IncSpecSeq*, pair<int, IncSpecSe
 	queue<int> worklist;
 	worklist.push(resetState);
 
-//	cout  << resetState << endl;
-
 	while (!worklist.empty()) {
 		int state = worklist.front();
 		worklist.pop();
@@ -254,8 +249,6 @@ void removeUnreachableStates(vector<vector<pair<IncSpecSeq*, pair<int, IncSpecSe
 		for (lastReachableState=machine.size()-1; lastReachableState>=0; lastReachableState--) {
 			if (reachableStates[lastReachableState]) break;
 		}
-
-//		cout << i <<", " << lastReachableState << endl;
 
 		if (lastReachableState>i) {
 			stateRemapping[lastReachableState]=i;
@@ -468,10 +461,6 @@ struct IncSpecSeqPtrComp {
 		return (*lhs)==(*rhs);
 	}
 };
-
-//bool IncSpecPtrCmp(const IncSpecSeq*& x, const IncSpecSeq*& y) {
-//	return (*x)==(*y);
-//}
 
 //computes a set of non-overlapping input sequences s.t. all transitions for states in eqClass are covered
 unordered_set<IncSpecSeq> getDisjointInputSet(vector<vector<pair<IncSpecSeq*, pair<int, IncSpecSeq*> > > >& states, vector<bool>& eqClass) {
