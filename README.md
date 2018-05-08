@@ -1,5 +1,5 @@
 # MeMin
-SAT-based exact minimization of incompletely specified Mealy machines
+A tool for SAT-based exact minimization of incompletely specified Mealy machines.
 
 ## Introduction
 
