@@ -185,7 +185,6 @@ void buildCNF(Solver* solver, vector<pair<int, int> >& literalToStateClass, unsi
 	unordered_set<int> reducedInputAlphabet;
 	computeReducedInputAlphabet(reducedInputAlphabet, maxInput, machineNextState);
 
-	cout << endl;
 	timeval start, end;
 	gettimeofday(&start, 0);
 

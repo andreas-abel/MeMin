@@ -183,7 +183,6 @@ int main(int argc, char* argv[]) {
 
 			std::vector<int> dimacsOutput;
 
-			printf("SAT\n");
 			for (int i = 0; i < S.nVars(); i++) {
 				if (S.model[i] != l_Undef) {
 					int lit = i+1;
@@ -206,8 +205,7 @@ int main(int argc, char* argv[]) {
 			gettimeofday(&end, 0);
 			if (verbosity>0) cout << "Writing to KISS file: "<< (end.tv_sec*1e6 + end.tv_usec) - (start.tv_sec*1e6 + start.tv_usec) << " usec" << endl;
 
-			std::cerr << nClasses;
-			cout << endl;
+			cout << "Result written to result.kiss" << endl;
 			exit(0);
 		}
 	}
